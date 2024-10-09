@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function saudacao(Barbara) {
+            console.log(`Olá,${Barbara}`);
+        }
+        function processarUsuario(Barbara, callback) {
+            setTimeout(() =>{
+                console.log("Processando usuario...");
+                callback(Barbara);
+            }, 2000);
+        }
+        processarUsuario("Barbara", saudacao)
+
+    </script>
+    
+</body>
+</html>
