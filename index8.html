@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function dividir (a, b){
+            try {
+                if (b===0){
+                    throw new Error("Divisão zero nao é permitida."); // lança uma execeção
+                }
+                return a/b;    //retorna o resultado da divisão
+             } catch(erro) {
+                console.error("Error:", erro.message);    //Trata com o erro e exibe a mensagem.
+             }
+        }
+        console.log(dividir(10, 2)); //Exibe:5
+        console.log(dividir(10, 0));  // Exibe: Erro: Divisão por zero não é permitida.
+        
+    </script>
 </body>
 </html>
