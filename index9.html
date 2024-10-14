@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        function fazerDownload()
+         {
+            return new Promise(function(resolve, reject)
+            {
+                //SIMULA UM ATRASO DE 2 SEGUNDOS PARA O DOWNLOAD
+                setTimeout(function ()
+                 {
+                    const sucesso = false; // ALTERE PARA FALSE PARA SIMULAR FALHA NO DOWNLOAD
+                    if (sucesso) {
+                        resolve("Download concluido com sucesso!"); //TRANSITA PARA O ESTADO CUMPRIDA.
+                    } else {
+                        reject("Falha no Download.");      //TRANSITA PARA O ESTADO REJEITADO
+                    }
+                }, 2000);
+            });
+        }
+        //USANDO A PROMISE
+        fazerDownload()
+        .then(function(mensagem) {
+            console.log(mensagem);    //EXIBE: DOWNLOAD CONCLUIDO COM SUCESSO!
+            })
+            .catch(function(erro) {
+                console.error(erro);
+            });
+    </script>
 </body>
+
 </html>
